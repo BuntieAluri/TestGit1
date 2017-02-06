@@ -1,0 +1,25 @@
+<project>
+
+    <target name="clean">
+        <delete dir="C:\myantappl\GEService\src\build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="C:\myantappl\GEService\src\build\classes"/>
+        <javac srcdir="C:\myantappl\GEService\src\oata" destdir="C:\myantappl\GEService\src\build\classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="C:\myantappl\GEService\src\build\jar"/>
+        <jar destfile="C:\myantappl\GEService\src\build\jar\HelloWorld.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="C:\myantappl\GEService\src\build\jar\HelloWorld.jar" fork="true"/>
+    </target>
+
+</project>
